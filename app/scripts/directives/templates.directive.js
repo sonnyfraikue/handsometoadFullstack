@@ -8,12 +8,12 @@
  * Directive of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .directive('templatesDirective', function () {
+  .directive('templatesDirective', function (OrderService) {
   	return {
     templateUrl: 'views/ptemplate.html',
-    link:function($scope,element,attr){
+    link:function($scope){
     	//dom manipulation here
-    	console.log($scope,element,attr);
+    	$scope.productid	=	OrderService.order.productid;
     }
   };
   });
