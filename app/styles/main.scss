@@ -70,6 +70,13 @@ body {
     margin-top: 28px;
   }
 }
+h2{
+  text-transform: capitalize;
+}
+canvas{
+  width:100%;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

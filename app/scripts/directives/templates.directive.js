@@ -13,7 +13,11 @@ angular.module('handsometoadApp')
     templateUrl: 'views/ptemplate.html',
     link:function($scope){
     	//dom manipulation here
-    	$scope.productid	=	OrderService.order.productid;
+    	$scope.chooseTemplate	=	function(id,title){
+    		OrderService.order.templateid =  id;
+    		OrderService.order.tempatetitle	=	title;
+    		console.log(id,title);
+    	};
     }
   };
   });

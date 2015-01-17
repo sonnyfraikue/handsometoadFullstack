@@ -9,7 +9,13 @@
  */
 angular.module('handsometoadApp')
 .factory('OrderService',function(){
-	 this.order =  { productid:false, templateid:false, address: 'danger' };
+	 this.order =  { 
+	 	productid:false, 
+	 	templateid:false, 
+	 	templatetitle:null,
+	 	templatedescription:null,
+	 	address: 'danger' 
+	 };
   	
 	return this;
 });
