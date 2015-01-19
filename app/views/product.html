@@ -1,1 +1,1 @@
-<div class="list-group"><a href="#" ng-click="chooseProduct(product.id)" ng-repeat="product in products" class="list-group-item"><span class="badge">{{product.count}}</span>{{product.name}}</a></div>
+<div class="list-group"><a href="#/{{urlPrefix}}/{{product.name}}/" ng-click="chooseProduct(product.id,product.name)" ng-repeat="product in products" class="list-group-item"><span class="badge">{{product.count}}</span>{{product.name}}</a></div>

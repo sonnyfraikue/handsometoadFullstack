@@ -9,7 +9,14 @@
  */
 angular.module('handsometoadApp')
   .controller('MainCtrl', function ($scope, ProductsService, TemplatesService, OrderService) {
-    $scope.products   = ProductsService.products;
-    $scope.templates  = TemplatesService.templates;
-    $scope.templateVisibility = OrderService.order.productid;
+    
+    $scope.home = function(){
+    	OrderService.order.productid	=	false;
+    };
+    $scope.products   			= ProductsService.products;
+    $scope.templates  			= TemplatesService.templates;
+    /*$scope.producttitle			=	OrderService.order.producttitle;
+    $scope.templatetitle		=	OrderService.order.templatetitle;*/
+    $scope.urlPrefix			=	'create';
+    
   });

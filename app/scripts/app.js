@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,11 +27,23 @@ angular
         templateUrl: 'views/canvas.html',
         controller: 'CanvasCtrl'
       })
+      .when('/create/:productname/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/address', {
+        templateUrl: 'views/address.html',
+        controller: 'AddressCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
       .when('/sell', {
+        templateUrl: 'views/sell.html',
+        controller: 'SellCtrl'
+      })
+      .when('/sell/:productname/', {
         templateUrl: 'views/sell.html',
         controller: 'SellCtrl'
       })
@@ -42,4 +54,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+      $locationProvider.html5Mode(true);
   });

@@ -11,11 +11,12 @@ angular.module('handsometoadApp')
   .directive('productsDirective', function (OrderService) {
   	return {
     templateUrl: 'views/product.html',
-    link:function($scope,element,attr){
+    link:function($scope){
     	//dom manipulation here
-      $scope.chooseProduct  = function(id){
-      console.log($scope,element,attr,OrderService.order.productid,id);
+      $scope.chooseProduct  = function(id,title){
       OrderService.order.productid =  id;
+      OrderService.order.producttitle = title;
+      console.log(OrderService.order.producttitle);
     };
     }
   };

@@ -8,6 +8,8 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('SellCtrl', function () {
-
+  .controller('SellCtrl', function ($scope) {
+	
+	$scope.urlPrefix			=	'sell';
+  
   });
