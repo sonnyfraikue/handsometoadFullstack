@@ -8,6 +8,6 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('NavCtrl', function ($scope,OrderService) {
-	$scope.products  = {title:OrderService.order.producttitle};
+  .controller('NavCtrl', function () {
+
   });

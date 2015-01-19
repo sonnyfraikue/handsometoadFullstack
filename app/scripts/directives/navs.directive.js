@@ -13,8 +13,11 @@ angular.module('handsometoadApp')
     templateUrl: 'views/nav.html',
     controller:'NavCtrl',
     link:function($scope){
-      $scope.producttitle = OrderService.order.producttitle;
-    	
+    	$scope.products  = {
+    title:OrderService.order.producttitle,
+    template:OrderService.order.templatetitle
+  };
+  
     }
   };
   });

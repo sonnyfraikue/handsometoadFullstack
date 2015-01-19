@@ -11,9 +11,9 @@ angular.module('handsometoadApp')
 .factory('OrderService',function(){
 	 this.order =  { 
 	 	productid:false, 
-	 	producttitle:'testtitle',
+	 	producttitle:'product title',
 	 	templateid:false, 
-	 	templatetitle:null,
+	 	templatetitle:'template title',
 	 	templatedescription:null,
 	 	address: 'danger' 
 	 };

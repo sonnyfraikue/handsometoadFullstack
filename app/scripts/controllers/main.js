@@ -15,8 +15,6 @@ angular.module('handsometoadApp')
     };
     $scope.products   			= ProductsService.products;
     $scope.templates  			= TemplatesService.templates;
-    /*$scope.producttitle			=	OrderService.order.producttitle;
-    $scope.templatetitle		=	OrderService.order.templatetitle;*/
     $scope.urlPrefix			=	'create';
     
   });
