@@ -8,7 +8,8 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-.factory('TemplatesService',function(){
+.factory('TemplatesService',function($http){
+    //this service will be refactored to pull resources from php
 	 this.templates =  [
     { parentid:1, name:'custom cards 1', description: 'danger', count:3 },
     { parentid:1, name:'custom cards 2', description: 'danger', count:3 },
@@ -35,6 +36,5 @@ angular.module('handsometoadApp')
     { parentid:5, name:'custom wall-paper5', description: 'info' , count:4},
     { parentid:6, name:'custom posters', description: 'info' , count:4},
   ];
-  	
-	return this;
+  	return $http.get('/api/templates', { cache: true });
 });

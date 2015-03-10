@@ -13,8 +13,15 @@ angular.module('handsometoadApp')
     $scope.home = function(){
     	OrderService.order.productid	=	false;
     };
-    $scope.products   			= ProductsService.products;
-    $scope.templates  			= TemplatesService.templates;
+    
+    ProductsService.then(function(response){
+    $scope.products   			= response.data;
+     }); 
+
+    TemplatesService.then(function(response){
+    $scope.templates   			= response.data;
+     }); 
+
     $scope.urlPrefix			=	'create';
     
   });

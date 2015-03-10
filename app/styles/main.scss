@@ -101,7 +101,9 @@ canvas{
     }
   }
 }
-
+.list-group{
+  transition: all 2.5s ease;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

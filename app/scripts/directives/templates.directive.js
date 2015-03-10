@@ -14,10 +14,10 @@ angular.module('handsometoadApp')
     link:function($scope){
     	//dom manipulation here
     	$scope.productid	=	OrderService.order.productid;
-    	$scope.chooseTemplate	=	function(id,title){
-    		OrderService.order.templateid =  id;
-    		OrderService.order.tempatetitle	=	title;
-    	};
+      //this method here allows me to abstract filtering preferences to allow conditional filters
+      $scope.checkFilter  = function(){
+        return ($scope.productid)?{parentid:$scope.productid}:null;
+      };
     }
   };
   });
