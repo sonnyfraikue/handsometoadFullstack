@@ -39,37 +39,19 @@ class Application extends Slim
         $this->error(function ($e) {
             $this->handleException($e);
         });
-
         // Config
         $this->configDirectory = __DIR__ . '/../../' . $configDirectory;
         $this->config = $this->initConfig();
-
-        // /features
-        $this->get('/api/features', function () {
-            $features = new Features($this->config['features']);
-            $this->response->headers->set('Content-Type', 'application/json');
-            $this->response->setBody(json_encode($features->getFeatures()));
-        });
-
-        $this->get('/api/features/:id', function ($id) {
-            $features = new Features($this->config['features']);
-            $feature = $features->getFeature($id);
-            if ($feature === null) {
-                return $this->notFound();
-            }
-            $this->response->headers->set('Content-Type', 'application/json');
-            $this->response->setBody(json_encode($feature));
-        });
-
+        $urlPrefix =   preg_match('/localhost/', $this->config['configuration']['thehost'],$matches)?$this->config['configuration']['local']['endpointprefix']:$this->config['configuration']['live']['endpointprefix'];
         // products
-         $this->get('/api/products', function () {
+         $this->get($urlPrefix.'products', function () {
             $products = new Products();
             $mydb = new autoload\Db();
             $this->response->headers->set('Content-Type', 'application/json');
             $this->response->setBody(json_encode($products->getProducts($mydb)));
         });
          // templates
-          $this->get('/api/templates', function () {
+          $this->get($this->config['configuration']['local']['endpointprefix'].'templates', function () {
             $templates = new Templates();
             $mydb = new autoload\Db();
             $this->response->headers->set('Content-Type', 'application/json');
