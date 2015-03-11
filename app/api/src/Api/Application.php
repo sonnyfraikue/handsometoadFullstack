@@ -51,7 +51,7 @@ class Application extends Slim
             $this->response->setBody(json_encode($products->getProducts($mydb)));
         });
          // templates
-          $this->get($this->config['configuration']['local']['endpointprefix'].'templates', function () {
+          $this->get($urlPrefix.'templates', function () {
             $templates = new Templates();
             $mydb = new autoload\Db();
             $this->response->headers->set('Content-Type', 'application/json');
