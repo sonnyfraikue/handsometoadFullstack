@@ -27,7 +27,7 @@ angular
         templateUrl: 'views/canvas.html',
         controller: 'CanvasCtrl'
       })
-      .when('/create/:productname/', {
+      .when('/create/:productname/:id', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
