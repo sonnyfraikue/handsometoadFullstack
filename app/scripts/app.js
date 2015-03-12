@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/canvas.html',
         controller: 'CanvasCtrl'
       })
+      .when('/customise', {
+        templateUrl: 'views/customise.html',
+        controller: 'CustomiseCtrl'
+      })
       .when('/create/:productname/:id', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'

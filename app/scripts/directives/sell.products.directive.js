@@ -13,6 +13,12 @@ angular.module('handsometoadApp')
     templateUrl: 'views/sell.product.html',
     link:function($scope){
       console.log($scope,OrderService);
+      $scope.chooseSellProduct  = function(id,title){
+      OrderService.order.chooseProduct(id,title);
+      OrderService.order.settings.hideproduct = true;
+      OrderService.order.settings.hidetemplate = false;
+      console.log('hideproduct set to true in products directive');
+    };
     }
   };
   });
