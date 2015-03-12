@@ -118,8 +118,14 @@ canvas{
 }
 .modal.fade{
   display:block;
-  opacity:.7;
+  opacity:1;
+}
+.overlay{
+  position:absolute;
   background-color:#000;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
 }
 .modal-dialog{
   margin-top:170px;

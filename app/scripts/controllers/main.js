@@ -14,7 +14,7 @@ angular.module('handsometoadApp')
           OrderService.order.chooseProduct($route.current.params.id);
       }
     });
-    $scope.showmodal  = $location.host().match(/local/)?true:false;
+    $scope.showmodal  = $location.host().match(/local/)?false:false;
     
     ProductsService.then(function(response){
     $scope.products   			= response.data;
