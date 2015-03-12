@@ -11,7 +11,8 @@ angular.module('handsometoadApp')
 .factory('OrderService',function(){
 	//this method should track and maintain data inside the client and also send the collected data to the backend
 	//this therefore needs an additional method
-	 this.order =  { 
+	var orderObj	=	{};
+	 orderObj.order =  { 
 	 	productid:false, 
 	 	producttitle:'product title',
 	 	templateid:false, 
@@ -19,6 +20,12 @@ angular.module('handsometoadApp')
 	 	templatedescription:null,
 	 	address: 'danger' 
 	 };
+
+	 orderObj.order.chooseProduct	=	function(id,title){
+	  orderObj.order.productid =  id;
+      orderObj.order.producttitle = title;
+	 };
+
   	
-	return this;
+	return orderObj;
 });
