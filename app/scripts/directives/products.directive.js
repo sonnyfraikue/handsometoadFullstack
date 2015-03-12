@@ -11,19 +11,18 @@ angular.module('handsometoadApp')
   .directive('productsDirective', function (OrderService) {
   	return {
     templateUrl: 'views/product.html',
-    link:function($scope,ele,attr){
-    	//dom manipulation here
+    link:function($scope){
       //lazily catching bubbled event from child link
-      console.log($scope,ele,attr);
      /* ele.bind('click', function(){
         console.log('heard click');
       });*/
       $scope.chooseProduct  = function(id,title){
       OrderService.order.chooseProduct(id,title);
-      console.log('trying to choose product');
+      OrderService.order.settings.hideproduct = true;
+      OrderService.order.settings.hidetemplate = false;
+      console.log('hideproduct set to true in products directive');
     };
     
-
     }
   };
   });

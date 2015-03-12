@@ -8,6 +8,11 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('NavCtrl', function () {
-
-  });
+  .controller('NavCtrl', function ($scope,OrderService,$location) {
+	$scope.home = function(){
+      OrderService.order.settings.hideproduct	=	false;
+      OrderService.order.settings.hidetemplate	=	false;
+      $location.path('/');
+		};
+      
+    });

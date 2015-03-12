@@ -9,17 +9,12 @@
  */
 angular.module('handsometoadApp')
   .controller('MainCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route) {
-    
     $scope.$on('$routeChangeSuccess', function () {
         if(!OrderService.order.productid){
           OrderService.order.chooseProduct($route.current.params.id);
       }
     });
     $scope.showmodal  = $location.host().match(/local/)?true:false;
-    $scope.home = function(){
-    	OrderService.order.productid	=	false;
-    };
-
     
     ProductsService.then(function(response){
     $scope.products   			= response.data;
@@ -30,6 +25,6 @@ angular.module('handsometoadApp')
      }); 
 
     $scope.urlPrefix			=	'create';
-    $scope.aesthetic  = {showproduct:false,showtemplate:false} ;
+    $scope.aesthetic      = OrderService.order.settings;
     
   });

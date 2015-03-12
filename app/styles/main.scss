@@ -29,7 +29,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   padding-bottom:5px;
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -80,22 +79,35 @@ canvas{
   width:100%;
 }
 .nav-pills{
+  position:relative;
+  top:15px;
+  .active{
+    a{
+      background-color:#fff !important;
+      color:#428bca !important;
+      border-radius:0;
+      border-bottom:1px solid #428bca !important;
+    }
+  }
   li{
     list-style: none;
     padding-bottom:10px;
+    a:hover{
+      background-color:#fff !important;
+    }
     ul{
       display:none;
       position: absolute;
       width:150px;
       padding:15px 0 0 0;
-      background-color:#eee;
       li{
-        padding:0 15px;
+        a{
+          padding:10px 5px;
+        }
       }
     }
   }
   li:hover{
-    background-color:#eee;
     ul{
       display:block;
     }
@@ -114,6 +126,9 @@ canvas{
   .modal-header{
     border:none;
   }
+}
+.logo-link{
+  cursor:pointer;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

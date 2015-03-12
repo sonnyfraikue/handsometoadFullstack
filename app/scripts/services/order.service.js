@@ -20,12 +20,12 @@ angular.module('handsometoadApp')
 	 	templatedescription:null,
 	 	address: 'danger' 
 	 };
-
 	 orderObj.order.chooseProduct	=	function(id,title){
 	  orderObj.order.productid =  id;
       orderObj.order.producttitle = title;
 	 };
 
+	 orderObj.order.settings	=	{hideproduct:false,hidetemplate:false};
   	
 	return orderObj;
 });
