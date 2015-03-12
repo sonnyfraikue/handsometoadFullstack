@@ -10,8 +10,13 @@
 angular.module('handsometoadApp')
   .controller('SellCtrl', function ($scope,ProductsService,TemplatesService) {
 	
-	$scope.products   			= ProductsService.products;
-    $scope.templates  			= TemplatesService.templates;
+	ProductsService.then(function(response){
+    $scope.products   			= response.data;
+     }); 
+
+    TemplatesService.then(function(response){
+    $scope.templates   			= response.data;
+     }); 
 	$scope.urlPrefix			=	'sell';
   
   });
