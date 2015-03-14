@@ -8,7 +8,7 @@
  * Directive of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .directive('productsDirective', function (OrderService) {
+  .directive('productsDirective', function (OrderService,ConfigService) {
   	return {
     templateUrl: 'views/product.html',
     link:function($scope){
@@ -18,9 +18,8 @@ angular.module('handsometoadApp')
       });*/
       $scope.chooseProduct  = function(id,title){
       OrderService.order.chooseProduct(id,title);
-      OrderService.order.settings.hideproduct = true;
-      OrderService.order.settings.hidetemplate = false;
-      console.log('hideproduct set to true in products directive');
+      ConfigService.ui.hideproduct = true;
+      ConfigService.ui.hidetemplate = false;
     };
     
     }

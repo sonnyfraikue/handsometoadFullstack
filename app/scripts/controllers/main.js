@@ -8,15 +8,14 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('MainCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route, ngProgress) {
-    ngProgress.color('#ff0000');
-    ngProgress.start();
+  .controller('MainCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route, ngProgress, ConfigService) {
+    ConfigService.init.progress();
     $scope.$on('$routeChangeSuccess', function () {
         if(!OrderService.order.productid){
           OrderService.order.chooseProduct($route.current.params.id);
       }
     });
-    $scope.showmodal  = $location.host().match(/local/)?true:false;
+    $scope.showmodal        = $location.host().match(/local/)?true:false;
     
     ProductsService.then(function(response){
     $scope.products   			= response.data;
@@ -28,7 +27,7 @@ angular.module('handsometoadApp')
     ngProgress.complete();
      }); 
 
-    $scope.urlPrefix			=	'create';
-    $scope.aesthetic      = OrderService.order.settings;
+    $scope.urlPrefix			  =	'create';
+    $scope.aesthetic        = ConfigService.ui;
     
   });
