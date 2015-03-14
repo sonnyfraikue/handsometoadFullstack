@@ -21,5 +21,6 @@ angular.module('handsometoadApp')
     ngProgress.complete();
      }); 
 	$scope.urlPrefix			=	'sell';
+  $scope.aesthetic        = ConfigService.ui;
   
   });

@@ -9,10 +9,11 @@
  */
 angular.module('handsometoadApp')
 .factory('OrderService',function(){
-	//this method should track and maintain data inside the client and also send the collected data to the backend
+	//this service should track and maintain data inside the client and also send the collected data to the backend
 	//this therefore needs an additional method
-	var orderObj	=	{};
-	 orderObj.order =  { 
+	//this service needs to persist the data it holds so as not to loose this data on refresh
+	var orderObj	   =	{};
+	 	orderObj.order =  	{ 
 	 	productid:false, 
 	 	producttitle:'product title',
 	 	templateid:false, 

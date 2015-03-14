@@ -19,9 +19,9 @@ angular.module('handsometoadApp')
         return ($scope.productid)?{parentid:$scope.productid}:null;
       };
       $scope.chooseSellTemplate  = function(id,title){
-      OrderService.order.chooseProduct(id,title);
       OrderService.order.settings.hideproduct = true;
       OrderService.order.settings.hidetemplate = false;
+      OrderService.order.templatetitle  = title;
       console.log('hideproduct set to true in products directive');
     };
     }

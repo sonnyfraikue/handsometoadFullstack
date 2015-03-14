@@ -22,8 +22,14 @@ body {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+  .navbar{
+    background-color:#fff !important;
+    border:none;
+    .logo-link{
   .logo{
     height:55px;
+  }
+  }
   }
 }
 
@@ -132,6 +138,13 @@ canvas{
 }
 .logo-link{
   cursor:pointer;
+}
+.form-control{
+  border:1px solid #eee;
+  box-shadow:none;
+}
+.form-group{
+  margin-bottom: 25px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

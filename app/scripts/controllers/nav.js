@@ -9,11 +9,11 @@
  */
 angular.module('handsometoadApp')
   .controller('NavCtrl', function ($scope,OrderService,$location,ConfigService) {
-	$scope.home = function(){
+	$scope.home = function(url){
 	  OrderService.order.productid				=	false;
       ConfigService.ui.hideproduct	=	false;
       ConfigService.ui.hidetemplate	=	false;
-      $location.path('/');
+      $location.path(url);
 		};
       
     });
