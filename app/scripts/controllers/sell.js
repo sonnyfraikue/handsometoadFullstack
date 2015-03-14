@@ -8,8 +8,9 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('SellCtrl', function ($scope,ProductsService,TemplatesService, ngProgress, ConfigService) {
+  .controller('SellCtrl', function ($scope,$location,ProductsService,TemplatesService, ngProgress, ConfigService) {
 	ConfigService.init.progress();
+  $scope.showmodal        = $location.host().match(/local/)?true:false;
 	ProductsService.then(function(response){
     $scope.products   			= response.data;
     ngProgress.complete();
