@@ -14,7 +14,9 @@
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
     "ngprogress": "1.0.7",
-    "ngDraggable": "1.0.2"
+    "ngDraggable": "0.1.2",
+    "angular-ui-router": "0.2.13",
+    "angular-breadcrumb": "0.3.3"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

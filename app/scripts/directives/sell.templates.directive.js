@@ -7,9 +7,9 @@
  * # templatesDirective
  * Directive of the handsometoadApp
  */
-angular.module('handsometoadApp')
-  .directive('sellTemplatesDirective', function (OrderService) {
-  	return {
+ angular.module('handsometoadApp')
+ .directive('sellTemplatesDirective', function (OrderService) {
+   return {
     templateUrl: 'views/sell.ptemplate.html',
     link:function($scope){
     	//dom manipulation here
@@ -19,11 +19,11 @@ angular.module('handsometoadApp')
         return ($scope.productid)?{parentid:$scope.productid}:null;
       };
       $scope.chooseSellTemplate  = function(id,title){
-      OrderService.order.settings.hideproduct = true;
-      OrderService.order.settings.hidetemplate = false;
-      OrderService.order.templatetitle  = title;
-      console.log('hideproduct set to true in products directive');
-    };
+        OrderService.order.settings.hideproduct = true;
+        OrderService.order.settings.hidetemplate = false;
+        OrderService.order.templatetitle  = title;
+        console.log('hideproduct set to true in products directive');
+      };
     }
   };
-  });
+});
