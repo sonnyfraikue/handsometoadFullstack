@@ -47,9 +47,12 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+width:100%;
+background-color:#eee;
+bottom:0;
+left:0;
+position:fixed;  
 }
 
 .container-narrow > hr {
@@ -147,33 +150,33 @@ canvas{
   margin-bottom: 25px;
 }
 /*page animations*/
-
+.container{
+  position:relative;
+}
 .slide {
-    -webkit-transition: -webkit-transform .7s ease-in-out;
-    -moz-transition: -moz-transform .7s ease-in-out;
-    -o-transition: -o-transform .7s ease-in-out;
-    transition: transform .7s ease-in-out;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    transition: all .7s ease-in-out;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:100px;
+    opacity: 1;
 }
-
 .slide.ng-enter {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+    transform: translateX(-150%);
+    opacity: 0;
+    z-index: 10;
 }
-
 .slide.ng-enter.ng-enter-active, .slide.ng-leave {
-    position: relative;
-    -webkit-transform: translateX(0);
     transform: translateX(0);
+    opacity: 1;
+    z-index: 9;
 }
-
 .slide.ng-leave.ng-leave-active {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+  transition: all .3s ease-in-out;
+    transform: translateX(150%);
+    opacity: 0;
 }
-
-
 /*page animations*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
