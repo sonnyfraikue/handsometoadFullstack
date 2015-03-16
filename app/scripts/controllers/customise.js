@@ -8,5 +8,8 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('CustomiseCtrl', function () {
+  .controller('CustomiseCtrl', function ($scope,OrderService) {
+  	$scope.breadcrumb ={
+    type:OrderService.order.type
+  };
   });

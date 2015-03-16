@@ -8,8 +8,9 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('SellCtrl', function ($scope,$location,ProductsService,TemplatesService, ngProgress, ConfigService) {
+  .controller('SellCtrl', function ($scope,$location,ProductsService,TemplatesService, ngProgress, ConfigService, OrderService) {
 	ConfigService.init.progress();
+  OrderService.order.type = 'Sell';
   $scope.showmodal        = $location.host().match(/local/)?true:false;
 	ProductsService.then(function(response){
     $scope.products   			= response.data;
@@ -22,5 +23,10 @@ angular.module('handsometoadApp')
      }); 
 	$scope.urlPrefix			=	'sell';
   $scope.aesthetic        = ConfigService.ui;
+  $scope.breadcrumb ={
+    type:OrderService.order.type,
+    product:OrderService.order.producttitle,
+    template:OrderService.order.templatetitle
+  };
   
   });

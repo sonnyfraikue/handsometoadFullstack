@@ -19,7 +19,7 @@ angular.module('handsometoadApp')
         return ($scope.productid)?{parentid:$scope.productid}:null;
       };
       $scope.chooseTemplate = function(id,name){
-        OrderService.order.tempatetitle = name.charAt(0).toUpperCase()+name.substr(1).toLowerCase();
+        OrderService.order.templatetitle = name.charAt(0).toUpperCase()+name.substr(1).toLowerCase();
       };
     }
   };

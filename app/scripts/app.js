@@ -23,12 +23,12 @@
   ])
  .config(function ($routeProvider,$urlRouterProvider,$locationProvider,$stateProvider) {
 
-$stateProvider.state('/', {
+$stateProvider.state('create', {
   url: '/',
   templateUrl: 'views/main.html',
   controller: 'MainCtrl',
   ncyBreadcrumb: {
-    label: '->Create'
+    label: '{{breadcrumb.type}}'
   }
 })
 .state('contact', {
@@ -36,7 +36,7 @@ $stateProvider.state('/', {
  templateUrl: 'views/contact.html',
  controller: 'ContactCtrl',
  ncyBreadcrumb: {
-   label: '->contact'
+   label: 'Contact'
  }          
 })
 .state('canvas', {
@@ -44,7 +44,8 @@ $stateProvider.state('/', {
  templateUrl: 'views/canvas.html',
  controller: 'CanvasCtrl',
  ncyBreadcrumb: {
-   label: '->canvas'
+   label: 'Editing {{breadcrumb.template}}',
+   parent:'productname'
  }          
 })
 .state('customise', {
@@ -52,15 +53,17 @@ $stateProvider.state('/', {
  templateUrl: 'views/customise.html',
  controller: 'CustomiseCtrl',
  ncyBreadcrumb: {
-   label: '->customise'
+   label: 'Customise',
+   parent:'sell'
  }          
 })
-.state('create', {
- url: '/create/:productname/:id',
+.state('productname', {
+ url: '/create/:productname/:id/',
  templateUrl: 'views/main.html',
  controller: 'MainCtrl',
  ncyBreadcrumb: {
-   label: '->creating :productname'
+   label: '{{breadcrumb.type}} {{breadcrumb.product}}',
+   parent:'create'
  }          
 })
 .state('address', {
@@ -68,7 +71,8 @@ $stateProvider.state('/', {
  templateUrl: 'views/address.html',
  controller: 'AddressCtrl',
  ncyBreadcrumb: {
-   label: '->address'
+   label: 'Address',
+   parent:'canvas'
  }          
 })
 .state('about', {
@@ -76,7 +80,7 @@ $stateProvider.state('/', {
  templateUrl: 'views/about.html',
  controller: 'AboutCtrl',
  ncyBreadcrumb: {
-   label: '->about'
+   label: 'About'
  }          
 })
 .state('sell', {
@@ -84,7 +88,16 @@ $stateProvider.state('/', {
  templateUrl: 'views/sell.html',
  controller: 'SellCtrl',
  ncyBreadcrumb: {
-   label: '->sell'
+   label: '{{breadcrumb.type}}'
+ }          
+})
+.state('sellproductname', {
+ url: '/sell/:productname/:id/',
+ templateUrl: 'views/sell.html',
+ controller: 'SellCtrl',
+ ncyBreadcrumb: {
+   label: '{{breadcrumb.type}} {{breadcrumb.product}}',
+   parent:'sell'
  }          
 });
 

@@ -10,4 +10,9 @@
 angular.module('handsometoadApp')
   .controller('CanvasCtrl', function ($scope,OrderService) {
   $scope.title  = OrderService.order.templatetitle;
+  $scope.breadcrumb ={
+  	type:OrderService.order.type,
+  	product:OrderService.order.producttitle,
+  	template:OrderService.order.templatetitle
+  };
   });

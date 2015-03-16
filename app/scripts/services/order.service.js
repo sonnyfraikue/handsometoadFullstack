@@ -15,6 +15,7 @@ angular.module('handsometoadApp')
 	var orderObj	   =	{};
 	 	orderObj.order =  	{ 
 	 	productid:false, 
+	 	producttype:null,
 	 	producttitle:'product title',
 	 	templateid:false, 
 	 	templatetitle:'template title',

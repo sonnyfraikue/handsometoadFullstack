@@ -29,5 +29,11 @@ angular.module('handsometoadApp')
 
     $scope.urlPrefix			  =	'create';
     $scope.aesthetic        = ConfigService.ui;
+    $scope.breadcrumb       = {
+    type:OrderService.order.type,
+    product:OrderService.order.producttitle,
+    template:OrderService.order.templatetitle
+  };
+    console.log('set breadcrumb to ->'+OrderService.order.producttitle);
     
   });

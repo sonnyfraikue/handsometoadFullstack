@@ -18,6 +18,7 @@ angular.module('handsometoadApp')
       });*/
       $scope.chooseProduct  = function(id,title){
       OrderService.order.chooseProduct(id,title);
+      OrderService.order.type = 'Create';
       ConfigService.ui.hideproduct = true;
       ConfigService.ui.hidetemplate = false;
     };

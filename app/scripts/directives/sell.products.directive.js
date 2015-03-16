@@ -14,6 +14,7 @@ angular.module('handsometoadApp')
     link:function($scope){
       $scope.chooseSellProduct  = function(id,title){
       OrderService.order.chooseProduct(id,title);
+      OrderService.order.producttitle = title;
       ConfigService.ui.hideproduct = true;
       ConfigService.ui.hidetemplate = false;
       console.log('chooseSellProduct');
