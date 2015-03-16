@@ -10,6 +10,7 @@
 angular.module('handsometoadApp')
   .controller('MainCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route, ngProgress, ConfigService) {
     ConfigService.init.progress();
+    OrderService.order.producttype = 'Create';
     $scope.$on('$routeChangeSuccess', function () {
         if(!OrderService.order.productid){
           OrderService.order.chooseProduct($route.current.params.id);
@@ -30,10 +31,10 @@ angular.module('handsometoadApp')
     $scope.urlPrefix			  =	'create';
     $scope.aesthetic        = ConfigService.ui;
     $scope.breadcrumb       = {
-    type:OrderService.order.type,
+    type:OrderService.order.producttype,
     product:OrderService.order.producttitle,
     template:OrderService.order.templatetitle
   };
-    console.log('set breadcrumb to ->'+OrderService.order.producttitle);
+    console.log('set breadcrumb to ->'+OrderService.order.producttype);
     
   });

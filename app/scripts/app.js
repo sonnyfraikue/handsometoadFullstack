@@ -48,6 +48,15 @@ $stateProvider.state('create', {
    parent:'productname'
  }          
 })
+.state('sellcanvas', {
+ url: '/sell/canvas',
+ templateUrl: 'views/canvas.html',
+ controller: 'CanvasCtrl',
+ ncyBreadcrumb: {
+   label: 'Editing {{breadcrumb.template}}',
+   parent:'sellproductname'
+ }          
+})
 .state('customise', {
  url: '/customise',
  templateUrl: 'views/customise.html',
@@ -73,6 +82,15 @@ $stateProvider.state('create', {
  ncyBreadcrumb: {
    label: 'Address',
    parent:'canvas'
+ }          
+})
+.state('checkout', {
+ url: '/checkout',
+ templateUrl: 'views/checkout.html',
+ controller: 'CheckoutCtrl',
+ ncyBreadcrumb: {
+   label: 'Checkout',
+   parent:'address'
  }          
 })
 .state('about', {

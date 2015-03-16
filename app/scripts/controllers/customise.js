@@ -10,6 +10,6 @@
 angular.module('handsometoadApp')
   .controller('CustomiseCtrl', function ($scope,OrderService) {
   	$scope.breadcrumb ={
-    type:OrderService.order.type
+    type:OrderService.order.producttype
   };
   });

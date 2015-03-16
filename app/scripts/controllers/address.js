@@ -8,6 +8,11 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('AddressCtrl', function () {
-
+  .controller('AddressCtrl', function ($scope, OrderService) {
+  	$scope.title 	=	'Shipping';
+	$scope.breadcrumb ={
+  	type:OrderService.order.producttype,
+  	product:OrderService.order.producttitle,
+  	template:OrderService.order.templatetitle
+  };
   });
