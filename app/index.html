@@ -23,10 +23,25 @@
     
     <!-- Add your site or application content here -->
     <div class="container">
+        <!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" ng-hide="showmodal">
+  <div class="overlay"></div>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="myModalLabel">Handsometoad Dev Team</h6>
+      </div>
+      <div class="modal-body">
+       Sorry, we are still building you a badass site.
+      </div>
+    </div>
+  </div>
+</div>
+
       <nav class="header">
         <div navs-directive></div>
       </nav>
-      <div ui-view class="ng-animate slide"></div>
+      <div ui-view class="ng-animate slide extra-margin-bottom"></div>
       <footer class="footer">
         <p><span class="glyphicon glyphicon-copyright-mark"></span> Handsometoad</p>
       </div>
@@ -82,6 +97,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/main.product.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/sell.js"></script>
         <script src="scripts/controllers/contact.js"></script>

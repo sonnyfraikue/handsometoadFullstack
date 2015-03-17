@@ -32,7 +32,11 @@ body {
   }
   }
 }
-
+.extra-margin-bottom{
+  .panel{
+  margin-bottom: 100px;
+  }
+}
 /* Custom page header */
 .header {
   padding-bottom:5px;
@@ -152,6 +156,8 @@ canvas{
 /*page animations*/
 .container{
   position:relative;
+  padding-left:0;
+  padding-right:0;
 }
 .slide {
     transition: all .7s ease-in-out;

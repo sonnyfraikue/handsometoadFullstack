@@ -8,6 +8,6 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('ContactCtrl', function () {
-
+  .controller('ContactCtrl', function ($scope) {
+	$scope.title  = 'Contact';
   });

@@ -69,7 +69,7 @@ $stateProvider.state('create', {
 .state('productname', {
  url: '/create/:productname/:id/',
  templateUrl: 'views/main.html',
- controller: 'MainCtrl',
+ controller: 'MainProductCtrl',
  ncyBreadcrumb: {
    label: '{{breadcrumb.type}} {{breadcrumb.product}}',
    parent:'create'

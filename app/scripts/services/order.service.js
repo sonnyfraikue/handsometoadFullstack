@@ -27,7 +27,5 @@ angular.module('handsometoadApp')
       orderObj.order.producttitle = title;
 	 };
 
-	 orderObj.order.settings	=	{hideproduct:false,hidetemplate:false};
-  	
 	return orderObj;
 });

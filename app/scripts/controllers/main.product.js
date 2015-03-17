@@ -8,17 +8,15 @@
  * Controller of the handsometoadApp
  */
 angular.module('handsometoadApp')
-  .controller('MainCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route, ngProgress, ConfigService) {
+  .controller('MainProductCtrl', function ($location, $scope, ProductsService, TemplatesService, OrderService, $route, ngProgress, ConfigService) {
     ConfigService.init.progress();
-    ConfigService.ui.hideproduct  = false;
-    ConfigService.ui.hidetemplate = false;
     OrderService.order.producttype = 'Create';
     $scope.$on('$routeChangeSuccess', function () {
         if(!OrderService.order.productid){
           OrderService.order.chooseProduct($route.current.params.id);
       }
     });
-    $scope.showmodal        = $location.host().match(/local/)?true:false;
+    $scope.showmodal        = $location.host().match(/local/)?true:true;
     
     ProductsService.then(function(response){
     $scope.products   			= response.data;
@@ -37,6 +35,5 @@ angular.module('handsometoadApp')
     product:OrderService.order.producttitle,
     template:OrderService.order.templatetitle
   };
-    console.log('set breadcrumb to ->'+OrderService.order.producttype);
     
   });
