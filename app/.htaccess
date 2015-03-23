@@ -213,7 +213,7 @@ AddDefaultCharset utf-8
   # Options +SymLinksIfOwnerMatch
     RewriteEngine On 
     RewriteCond %{REQUEST_FILENAME} !-f 
-    RewriteRule ^(.*)$ %{ENV:BASE}index.html [QSA,L]
+    RewriteRule ^(.*)$ %{ENV:BASE}/[QSA,L]
 </IfModule>
 
 
