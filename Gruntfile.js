@@ -93,10 +93,10 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 9001,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: 35729
+        livereload: 35829
       },
       proxies: [
         {
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
     // PHP built-in server
     php: {
       options: {
-        port: 8000,
+        port: 8010,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '127.0.0.1',
         router: 'index.php'
