@@ -16,6 +16,7 @@ TODO: Describe the installation process
 ## Credits
 
 Code by Sonny Fraikue
+
 Logo design by Mike Harrison & Pauline Bir
 
 ## License
