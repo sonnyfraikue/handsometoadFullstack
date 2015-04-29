@@ -22,7 +22,6 @@
         OrderService.order.settings.hideproduct = true;
         OrderService.order.settings.hidetemplate = false;
         OrderService.order.templatetitle  = title;
-        console.log('hideproduct set to true in products directive');
       };
     }
   };
