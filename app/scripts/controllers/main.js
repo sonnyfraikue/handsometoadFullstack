@@ -36,6 +36,5 @@ angular.module('handsometoadApp')
     product:OrderService.order.producttitle,
     template:OrderService.order.templatetitle
   };
-    console.log('set breadcrumb to ->'+OrderService.order.producttype);
     
   });
