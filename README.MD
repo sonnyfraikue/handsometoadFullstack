@@ -3,6 +3,10 @@
 TODO: Write a project description
 
 ## Installation
+1. cd handsometoadFullstack
+2. npm install && bower install
+3. cd app/api
+4. make install
 
 TODO: Describe the installation process
 
