@@ -3,8 +3,7 @@
   "type": "project",
   "autoload": {
     "psr-0": {
-      "Api": "src/",
-      "Test": "tests/"
+      "Api": "src/"
     }
   },
   "repositories": [
